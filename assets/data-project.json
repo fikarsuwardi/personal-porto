@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Asian Fusion",
+        "desc": "A chat application with registration, login and chat features",
+        "repo": "https://github.com/fikarsuwardi/chat_app",
+        "link": "-",
+        "Tech Stack": "Flutter, Firebase (Authentication, Storage, Firestore Database, Messaging)"
+    },
+    {
+        "name": "Asian Fusion",
+        "desc": "A chat application with registration, login and chat features",
+        "repo": "https://github.com/fikarsuwardi/chat_app",
+        "link": "-",
+        "Tech Stack": "Flutter, Firebase (Authentication, Storage, Firestore Database, Messaging)"
+    }
+]
