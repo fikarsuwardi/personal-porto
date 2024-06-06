@@ -9,6 +9,14 @@ const listProjectMobile = [
   },
   {
     id: 2,
+    name: "Shopping List",
+    desc: "A chat application that show list of shopping item",
+    repo: "https://github.com/fikarsuwardi/shopping_list",
+    link: "-",
+    techStack: "Flutter, Form, http packages, Firebase Realtime Database",
+  },
+  {
+    id: 3,
     name: "Expenses App",
     desc: "Application to record every expense",
     repo: "https://github.com/fikarsuwardi/expenses_app",
@@ -16,7 +24,7 @@ const listProjectMobile = [
     techStack: "React Native, Expo, Axios, Realtime Database",
   },
   {
-    id: 3,
+    id: 4,
     name: "Flash Chat",
     desc: "A chat application with registration, login and chat features",
     repo: "https://github.com/fikarsuwardi/Flash-Chat-IOS",
@@ -73,6 +81,22 @@ const listProjectWeb = [
     repo: "https://github.com/fikarsuwardi/l11-book-review",
     link: "-",
     techStack: "Laravel",
+  },
+  {
+    id: 7,
+    name: "Online Shop CMS Server Side",
+    desc: "A web application that show list of selling item.",
+    repo: "https://github.com/fikarsuwardi/fikarShop-server",
+    link: "-",
+    techStack: "Node, Express, PostgreSQL, Sequelize, Axios, jsonwebtoken, cors, dotenv",
+  },
+  {
+    id: 8,
+    name: "Online Shop CMS Admin Side",
+    desc: "A web application that show list of selling item.",
+    repo: "https://github.com/fikarsuwardi/fikarShop-admin-side",
+    link: "-",
+    techStack: "React, redux, router, bootstrap",
   }
 ];
 
