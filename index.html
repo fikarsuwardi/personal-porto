@@ -2,145 +2,272 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Sacramento&display=swap"
-    rel="stylesheet">
-  <title>My Portofolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+  .card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-title {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+  }
+
+  .container.py-4 {
+    margin-bottom: 20px;
+  }
+
+  .contact-message {
+    width: 40%;
+    margin: 40px auto 60px;
+  }
+
+  .bottom-container {
+    /* background-color: #66bfbf; */
+    padding: 50px 0 20px;
+  }
+
+  .thumbnail {
+    cursor: pointer;
+  }
+</style>
 </head>
 
-<body cz-shortcut-listen="true">
-  <!-- Write your comments here -->
-  <div class="top-container">
-    <div class="title-text">
-      <h1>I'm Fikar.</h1>
-      <h2>a <span class="pro">pro</span>grammer.</h2>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </div>
+  </nav>
 
-  <!-- Write your comments here -->
-  <div class="middle-container">
-    <div class="profile">
-      <img class="profile-image" src="assets/cat-work.jpeg" alt="angela-profile-img">
-      <h2>Hello.</h2>
-      <p class="intro">I am mechanical engineering who switch careers to become a software developer. I have interest in
-        learning software development.</p>
+  <!-- Profile Section -->
+  <section id="profile" class="container text-center py-2">
+    <h1 class="section-title">I'm Fikar</h1>
+    <h5>a programmer</h5>
+    <br>
+    <img src="images/cat-work.jpeg" alt="Profile Photo" class="rounded-circle profile-photo mb-3" width="300px" />
+    <br>
+    <p>
+      I am a dedicated Mechanical Engineering graduate who has successfully transitioned into the IT field, driven by a
+      profound interest in software engineering. With a strong foundation in JavaScript and Dart, I develop robust and
+      efficient applications, seamlessly integrating my engineering problem-solving mindset into my software development
+      practices. I am committed to continuous learning and staying current with industry trends to enhance my skills and
+      contribute effectively to any team, eager to leverage my diverse skill set and technical expertise to deliver
+      high-quality software solutions that drive success and innovation.
+    </p>
+    <p></p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container mt-4 bg-skills py-2">
+    <h1 class="section-title">Skill</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Frontend</h3>
+        <ul class="list-group">
+          <li class="list-group-item">HTML & CSS</li>
+          <li class="list-group-item">JavaScript</li>
+          <li class="list-group-item">React & React Native</li>
+          <li class="list-group-item">Vue</li>
+          <li class="list-group-item">Flutter</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-center">Backend</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Node.js</li>
+          <li class="list-group-item">Express</li>
+          <li class="list-group-item">ORM Sequelize</li>
+          <li class="list-group-item">Java & Spring</li>
+          <li class="list-group-item">PostgreSql</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-center">Utility</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Github</li>
+          <li class="list-group-item">Source Tree</li>
+          <li class="list-group-item">Docker</li>
+          <li class="list-group-item">Scrum Agile Methodology</li>
+          <li class="list-group-item">CI/CD</li>
+        </ul>
+      </div>
     </div>
-    <div class="skills">
-      <h2>My Skills</h2>
-      <div class="parent">
-        <div class="frontendWeb">
-          <h3>Frontend Web</h3>
-          <p>HTML, CSS, Jquery, Tailwind, Laravel, Vue, React.js</p>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="container py-4">
+    <h1 class="section-title">Education</h1>
+    <div class="card-deck">
+      <div class="card shadow mb-4">
+        <div class="card-img-container">
+          <img src="images/unhas-logo.png" alt="unhas-logo" class="card-img-top img-fluid w-50" width="auto" />
         </div>
-        <div class="frontendMobile">
-          <h3>Frontend Mobile</h3>
-          <p>Flutter, Swift, React Native</p>
+        <div class="card-body">
+          <h5 class="card-title">
+            Bachelor's Degree of Mechanical Engineering
+          </h5>
+          <p class="card-text">Hasanuddin University</p>
+          <p class="card-text">October 2014 - May 2019</p>
         </div>
-        <div class="backend">
-          <h3>Backend and Database</h3>
-          <p>SQL, NodeJs, Express, Sequelize ORM, PostgreSQL</p>
+      </div>
+      <div class="card shadow mb-4">
+        <div class="card-img-container">
+          <img src="images/hactiv8-logo.png" alt="hacktiv8-logo" class="card-img-top img-fluid w-50" width="auto" />
         </div>
-        <div class="utility">
-          <h3>Utility</h3>
-          <p>Docker, Axios, Github, Sourcetree, CI/CD, Scrum Agile Methodology, JIRA</p>
+        <div class="card-body">
+          <h5 class="card-title">Full Stack Javascript Developer</h5>
+          <p class="card-text">Hacktiv8</p>
+          <p class="card-text">March 2022 - July 2022</p>
         </div>
       </div>
     </div>
-    <div class="experience">
-      <h2>Experience</h2>
-      <div class="experienceSub">
-        <img class="workplace-image" src="assets/wide-logo.jpeg" alt="wide-logo">
-        <div class="workplace-description">
-          <h3>Software Mobile Engineer</h3>
-          <h4>PT Wide Technologies Indonesia</h4>
-          <h5>September 2022 - Now</h5>
-          <p>Create and test software from start to finish.
-            Discuss and analyze user requests and requirements, then research and brainstorm practical solutions to meet
-            those needs, and determine the best course of action to create the application.
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="container py-4">
+    <h1 class="section-title">Experience</h1>
+    <div class="card-deck">
+      <div class="card">
+        <img src="images/wide-logo.jpeg" class="card-img-top" alt="wide-logo" />
+        <div class="card-body">
+          <h5 class="card-title">PT Wide Technologies Indonesia</h5>
+          <p class="card-title">September 2022 - Now</p>
+          <h6 class="card-title">Software Mobile Engineer</h6>
+          <p class="card-text">
+            I design, develop, and maintain software applications to meet user
+            requirements and enhance functionality. My responsibilities
+            include writing clean and efficient code, debugging and
+            troubleshooting issues, and performing regular testing to ensure
+            software reliability. I collaborate with cross-functional teams to
+            gather requirements and deliver solutions, and I stay updated with
+            the latest industry trends and technologies to continuously
+            improve my skills. Additionally, I document code and processes,
+            ensuring seamless knowledge transfer and maintenance.
           </p>
         </div>
-
       </div>
-      <div class="experienceSub">
-        <img class="workplace-image" src="assets/cube-logo.jpeg" alt="wide-logo">
-        <div>
-          <h3>Production Staff</h3>
-          <h4>Cube Interior</h4>
-          <h5>September 2021 - Maret 2022</h5>
-          <p>Manage the workflow by assigning responsibilities and preparing schedules.
-            Guide and coach employees, monitoring their productivity.
-            Establish daily objectives and communicate them to employees.
-          </p>
-
-        </div>
-
-      </div>
-      <div class="experienceSub">
-        <img class="workplace-image" src="assets/wings-logo.png" alt="wide-logo">
-
-        <div>
-          <h3>Production Supervisor</h3>
-          <h4>PT. Karunia Indah Segar (Wings Group)</h4>
-          <h5>November 2019 - September 2021</h5>
-          <p>Manage the workflow by assigning responsibilities and preparing schedules.
-            Guide and coach employees. monitoring their productivity.
-            Establish daily objectives and communicate them to employees.
+      <div class="card">
+        <img src="images/cube-logo.jpeg" class="card-img-top" alt="cube-logo" />
+        <div class="card-body">
+          <h5 class="card-title">Cube Interior</h5>
+          <p class="card-title">September 2021 - Maret 2022</p>
+          <h6 class="card-title">Production Staff</h6>
+          <p class="card-text">
+            I assist in manufacturing and assembling furniture, ensuring all
+            products meet quality standards. I handle materials safely,
+            perform routine maintenance on equipment, and adhere to health and
+            safety regulations. I maintain accurate production records, track
+            inventory, and collaborate with team members to meet production
+            targets.
           </p>
         </div>
-
       </div>
-
-    </div>
-    <div class="education">
-      <h2>Education</h2>
-      <div class="educationSub">
-        <img class="education-image" src="assets/hactiv8-logo.png" alt="hactiv8-logo">
-        <div class="education-description">
-          <h3>Hacktiv8</h3>
-          <h4>Full Stack Javascript Developer</h4>
-          <h5>March 2022 - July 2022 </h5>
-        </div>
-      </div>
-      <div class="educationSub">
-        <img class="education-image" src="assets/unhas-logo.png" alt="unhas-logo">
-        <div class="education-description">
-          <h3>Hasanuddin University</h3>
-          <h4>Mechanical Engineering</h4>
-          <h5>October 2014 - May 2019</h5>
+      <div class="card">
+        <img src="images/wings-logo.png" class="card-img-top" alt="wings-logo" />
+        <div class="card-body">
+          <h5 class="card-title">PT. Karunia Indah Segar (Wings Group)</h5>
+          <p class="card-title">November 2019 - September 2021</p>
+          <h6 class="card-title">Production Supervisor</h6>
+          <p class="card-text">
+            Manage the workflow by assigning responsibilities and preparing
+            schedules. Guide and coach employees, monitoring their
+            productivity. Establish daily objectives and communicate them to
+            employees.
+          </p>
         </div>
       </div>
     </div>
-    <div class="project">
-      <h2>Project Portofolio</h2>
-      <h3>Project Mobile Application</h3>
-      <table class="project-table-mobile" id="project-table-mobile">
-      </table>
-      <h3>Project Mobile Web</h3>
-      <table class="project-table-web" id="project-table-web">
-      </table>
+  </section>
+
+  <!-- Projects Mobile Section -->
+  <section id="projects" class="container py-4">
+    <h1 class="section-title">Projects Mobile</h1>
+    <div class="row" id="project-cards-mobile">
+      <!-- Project cards will be injected here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Projects Web Section -->
+  <section id="projects" class="container py-4">
+    <h1 class="section-title">Projects Web</h1>
+    <div class="row" id="project-cards-web">
+      <!-- Project cards will be injected here by JavaScript -->
+    </div>
+  </section>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" class="img-fluid" id="modalImage" alt="Selected Image">
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Write your comments here -->
-  <div class="contact-me">
-    <h2>Get In Touch</h2>
-    <a class="btn" href="mailto:fikarsuwardi@gmail.com">CONTACT ME</a>
+  <div class="contact-me container text-center py-3" id="contact">
+    <h2 class="py-2">Get In Touch</h2>
+    <a class="btn btn-primary" href="mailto:fikarsuwardi@gmail.com">CONTACT ME</a>
   </div>
 
-  <!-- Write your comments here -->
-  <div class="bottom-container">
-    <a class="footer-link" target=”_blank” href="https://www.linkedin.com/in/zulfikar-suwardi/">LinkedIn</a>
-    <a class="footer-link" target=”_blank” href="https://github.com/fikarsuwardi">Github</a>
-    <p class="copyright">Fikar Suwardi.</p>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white py-4">
+    <div class="container mb-3">
+      <div class="row">
+        <div class="col">
+          <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="text-white mx-2">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/your-profile" target="_blank" class="text-white mx-2">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p>&copy; 2024 fikarsuwardi. All rights reserved.</p>
 
+  </footer>
 
-  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
