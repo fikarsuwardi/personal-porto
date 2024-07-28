@@ -47,6 +47,18 @@ const listProjectMobile = [
     link: "",
     techStack: "Swift, Xcode, CocoaPods, Authentication, Cloud Database, MVC",
   },
+  {
+    id: 5,
+    name: "Digital Business Platform",
+    img1: "images/project/dmbp/example.webp",
+    img2: "images/project/dmbp/dmbp.png",
+    img3: "images/project/dmbp/dmbp.png",
+    img4: "images/project/dmbp/dmbp.png",
+    desc: "Digital platform to easily access all your banking channels and financial data. Digital Business Platform provides ISO, and identification system that allows access to multiple channels or applications with one credential.",
+    repo: "",
+    link: "https://www.widetechnologies.co.id/products/digital-business-platform",
+    techStack: "Flutter",
+  },
 ];
 const listProjectWeb = [
   {
