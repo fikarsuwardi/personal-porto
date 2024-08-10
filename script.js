@@ -129,7 +129,7 @@ const listProjectWeb = [
     img2: "images/project/fikarShop/add.png",
     img3: "images/project/fikarShop/images.png",
     img4: "images/project/fikarShop/register.png",
-    desc: "A web application that show list of selling item.",
+    desc: "I developed a CMS web application for an online shop, utilizing React for the front end and Node.js with Express for the back end. The application features a user-friendly interface for managing products, categories, and orders, and ensures optimal performance across devices through responsive design.",
     repo: "https://github.com/fikarsuwardi/fikarShop-server",
     link: "",
     techStack:
@@ -142,7 +142,7 @@ const listProjectWeb = [
     img2: "images/project/fikarShop/add.png",
     img3: "images/project/fikarShop/images.png",
     img4: "images/project/fikarShop/register.png",
-    desc: "A web application that show list of selling item.",
+    desc: "I developed a CMS web application for an online shop, utilizing React for the front end and Node.js with Express for the back end. The application features a user-friendly interface for managing products, categories, and orders, and ensures optimal performance across devices through responsive design.",
     repo: "https://github.com/fikarsuwardi/fikarShop-admin-side",
     link: "",
     techStack: "React, redux, router, bootstrap",
