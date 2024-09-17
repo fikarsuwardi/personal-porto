@@ -41,6 +41,36 @@
   .thumbnail {
     cursor: pointer;
   }
+
+  .experience-card-deck {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .experience-card-img-left {
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+
+  .experience-card-body {
+    flex-grow: 1;
+  }
+
+  .experience-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-card-text {
+    font-size: 1rem;
+  }
 </style>
 </head>
 
@@ -102,9 +132,8 @@
           <li class="list-group-item">HTML & CSS</li>
           <li class="list-group-item">JavaScript</li>
           <li class="list-group-item">React & React Native</li>
-          <li class="list-group-item">Vue</li>
+          <li class="list-group-item">Tailwind</li>
           <li class="list-group-item">Flutter</li>
-          <li class="list-group-item">Laravel</li>
 
         </ul>
       </div>
@@ -114,9 +143,8 @@
           <li class="list-group-item">Node.js</li>
           <li class="list-group-item">Express</li>
           <li class="list-group-item">ORM Sequelize</li>
-          <li class="list-group-item">Java & Spring</li>
           <li class="list-group-item">PostgreSql</li>
-          <li class="list-group-item">MongoDB</li>
+          <li class="list-group-item">n8n</li>
 
         </ul>
       </div>
@@ -125,10 +153,9 @@
         <ul class="list-group">
           <li class="list-group-item">Github</li>
           <li class="list-group-item">Source Tree</li>
-          <li class="list-group-item">Docker</li>
+          <li class="list-group-item">Test Automation</li>
           <li class="list-group-item">Scrum Agile Methodology</li>
           <li class="list-group-item">CI/CD</li>
-          <li class="list-group-item">Jest</li>
         </ul>
       </div>
     </div>
@@ -171,75 +198,83 @@
 
   <!-- Experience Section -->
   <section id="experience" class="container py-4">
-    <h1 class="section-title">Experience</h1>
-    <div class="card-deck">
-      <div class="card">
-        <img src="images/dms.jpeg" class="card-img-top" alt="dms-logo" />
-        <div class="card-body">
-          <h5 class="card-title">PT. Dynamics Management Solution</h5>
-          <p class="card-title">June 2024 - Current</p>
-          <h6 class="card-title">Flutter Developer</h6>
-          <p class="card-text">
-            As a Flutter Developer, I am responsible for developing and maintaining a Human Resource Information System
-            (HRIS) mobile application. My main tasks include:
-            Implementing user-friendly UI/UX designs.
-            Writing efficient, maintainable code in Dart and Flutter.
-            Integrating HRIS features like employee management and payroll.
-            Ensuring app responsiveness on Android and iOS.
-            Connecting the app with backend services using RESTful APIs.
-            Identifying and fixing bugs.
-            Participating in team meetings and project planning.
-            Communicating effectively with team members and stakeholders.
+    <h1 class="section-title mb-4">Experience</h1>
+    <div class="experience-card-deck">
 
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/wide-logo.jpeg" class="card-img-top" alt="wide-logo" />
-        <div class="card-body">
-          <h5 class="card-title">PT Wide Technologies Indonesia</h5>
-          <p class="card-title">September 2022 - Current</p>
-          <h6 class="card-title">Software Mobile Engineer</h6>
-          <p class="card-text">
-            As a Software Engineer, I am responsible for developing and maintaining a Digital Mobile Banking Platform.
-            My key tasks include:
-            Implementing user-friendly and secure features.
-            Writing efficient and maintainable code.
-            Connecting with banking systems and APIs.
-            Ensuring data synchronization and security.
-            Identifying and fixing bugs.
-            Working closely with cross-functional teams.
-            Communicating effectively with stakeholders.
-
-          </p>
+      <div class="experience-card flex-row align-items-center mb-2">
+        <img src="images/linkbot_logo.jpeg" class="experience-card-img-left" alt="dms-logo"
+          style="width: 300px; height: 300px;" />
+        <div class="experience-card-body">
+          <h4 class="card-title">Linkbot Pte Ltd</h5>
+            <p class="card-title">September 2024 - Current</p>
+            <h6 class="card-title">Software Programmer</h6>
+            <p class="text">
+              As a Software Programmer, I contribute to developing innovative applications by combining traditional
+              programming skills with no-code platforms to create scalable solutions. My responsibilities include
+              designing and implementing robust API integrations across platforms n8n, optimizing data flows, and
+              utilizing JSON scripting for seamless automation. I collaborate closely with clients to understand their
+              needs and deliver effective solutions. With a foundation in programming, strong communication skills, and
+              a
+              passion for automation, I thrive in dynamic environments, driving both individual and team success.
+            </p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="images/wings-logo.png" class="card-img-top" alt="wings-logo" />
-        <div class="card-body">
-          <h5 class="card-title">PT. Karunia Indah Segar (Wings Group)</h5>
-          <p class="card-title">November 2019 - September 2021</p>
-          <h6 class="card-title">Production Supervisor</h6>
-          <p class="card-text">
-            As a Production Supervisor at food and beverage company, I am responsible for overseeing and managing the
-            production processes. My key tasks include:
-            Supervising production staff and ensuring adherence to safety protocols.
-            Providing training and support to team members.
-            Monitoring production lines to ensure efficiency and quality.
-            Managing schedules and workflow to meet production targets.
-            Implementing and maintaining quality assurance standards.
-            Conducting inspections and resolving any issues promptly.
-            Managing inventory and supplies to ensure smooth operations.
-            Coordinating with other departments for resource allocation.
-            By performing these tasks, I ensure the efficient and high-quality production of beverages, contributing to
-            the overall success of the company.
-
-          </p>
+      <div class="experience-card flex-row align-items-center mb-2">
+        <img src="images/dms.jpeg" class="experience-card-img-left" alt="dms-logo"
+          style="width: 300px; height: 300px;" />
+        <div class="experience-card-body">
+          <h4 class="card-title">PT. Dynamics Management Solution</h5>
+            <p class="card-title">June 2024 - September 2024</p>
+            <h6 class="card-title">Software Developer</h6>
+            <p class="experience-card-text">
+              As a Software Developer, I develop and maintain an HRIS mobile app, focusing on UI/UX design, efficient
+              Dart
+              code, and integrating features like employee management and payroll. I also work on the "Sivali Talent
+              Match" job search app with attendance and salary features. I ensure app responsiveness, connect to backend
+              services via APIs, fix bugs, and collaborate with the team for planning and communication.
+            </p>
         </div>
       </div>
+
+      <div class="experience-card flex-row align-items-center mb-2">
+        <img src="images/wide-logo.jpeg" class="experience-card-img-left" alt="wide-logo"
+          style="width: 300px; height: 300px;" />
+        <div class="experience-card-body">
+          <h4 class="card-title">PT Wide Technologies Indonesia</h5>
+            <p class="card-title">September 2022 - September 2024</p>
+            <h6 class="card-title">Software Mobile Engineer</h6>
+            <p class="experience-card-text">
+              As a Software Engineer, I develop and maintain a Digital Mobile Banking Platform, focusing on implementing
+              user-friendly and secure features, writing efficient code, and integrating with banking systems and APIs.
+              I
+              ensure data synchronization and security, fix bugs, and collaborate with cross-functional teams while
+              effectively communicating with stakeholders to deliver a robust and reliable banking solution.
+            </p>
+        </div>
+      </div>
+
+      <div class="experience-card flex-row align-items-center mb-">
+        <img src="images/wings-logo.png" class="experience-card-img-left" alt="wings-logo"
+          style="width: 300px; height: 300px;" />
+        <div class="experience-card-body">
+          <h4 class="card-title">PT. Karunia Indah Segar (Wings Group)</h5>
+            <p class="card-title">November 2019 - September 2021</p>
+            <h6 class="card-title">Production Supervisor</h6>
+            <p class="experience-card-text">
+              As a Production Supervisor, I oversee production processes, supervise staff, ensure safety protocols, and
+              maintain quality standards. My role includes monitoring efficiency, managing schedules, resolving issues,
+              and coordinating with departments to meet targets and ensure smooth operations, contributing to
+              high-quality
+              beverage production.
+            </p>
+        </div>
+      </div>
+
     </div>
   </section>
+
+
 
   <!-- Projects Mobile Section -->
   <section id="projects" class="container py-4">
