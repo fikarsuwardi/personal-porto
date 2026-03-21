@@ -4,329 +4,864 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Fikar Suwardi — Full Stack Developer</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <meta http-equiv='cache-control' content='no-cache'>
   <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
-</head>
-<style>
-  .card-img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --dark: #0f172a;
+      --dark-2: #1e293b;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+    }
 
-  .section-title {
-    font-family: "Roboto", sans-serif;
-    text-align: center;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  .container.py-4 {
-    margin-bottom: 20px;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .contact-message {
-    width: 40%;
-    margin: 40px auto 60px;
-  }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--gray-50);
+    }
 
-  .bottom-container {
-    /* background-color: #66bfbf; */
-    padding: 50px 0 20px;
-  }
+    /* ── Navbar ── */
+    .navbar {
+      background: #fff !important;
+      box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+      padding: 0.75rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  .thumbnail {
-    cursor: pointer;
-  }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary) !important;
+      letter-spacing: -0.5px;
+    }
 
-  .experience-card-deck {
-    display: flex;
-    flex-direction: column;
-  }
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text) !important;
+      padding: 0.5rem 0.75rem !important;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
 
-  .experience-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+    .nav-link:hover {
+      background: var(--gray-100);
+      color: var(--primary) !important;
+    }
 
-  .experience-card-img-left {
-    flex-shrink: 0;
-    object-fit: cover;
-    margin-right: 20px;
-  }
+    /* ── Hero ── */
+    #hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .experience-card-body {
-    flex-grow: 1;
-  }
+    #hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+    }
 
-  .experience-card-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+      bottom: -50px;
+      left: -50px;
+      border-radius: 50%;
+    }
 
-  .experience-card-text {
-    font-size: 1rem;
-  }
-</style>
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.15);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-greeting {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--primary-light);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+
+    .hero-title {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-bio {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions .btn {
+      padding: 0.65rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hero-actions .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.35);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-outline-light:hover {
+      color: var(--dark) !important;
+    }
+
+    /* ── Section Shared ── */
+    section {
+      padding: 5rem 0;
+    }
+
+    section:nth-child(even) {
+      background: #fff;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header .section-divider {
+      margin-top: 0.75rem;
+    }
+
+    /* ── Skills ── */
+    .skill-category {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      height: 100%;
+      border-top: 3px solid var(--primary);
+    }
+
+    .skill-category h5 {
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-badge {
+      background: var(--gray-100);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.825rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .skill-badge:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* ── Education / Course cards ── */
+    .edu-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .edu-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .edu-card-body h5 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-card-body .institution {
+      font-weight: 500;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .edu-card-body .location,
+    .edu-card-body .period {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .edu-card-body .description {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    /* ── Experience ── */
+    .exp-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .exp-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+    }
+
+    .exp-body h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-body .exp-role {
+      display: inline-block;
+      background: rgba(37,99,235,0.1);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-body .exp-meta {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-body ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .exp-body ul li {
+      font-size: 0.875rem;
+      color: #475569;
+      margin-bottom: 0.3rem;
+    }
+
+    @media (max-width: 576px) {
+      .exp-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .exp-logo {
+        width: 56px;
+        height: 56px;
+      }
+
+      .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ── Project Cards ── */
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.13);
+    }
+
+    .project-carousel .carousel-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-carousel .carousel-control-prev,
+    .project-carousel .carousel-control-next {
+      width: 2rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .project-card:hover .carousel-control-prev,
+    .project-card:hover .carousel-control-next {
+      opacity: 1;
+    }
+
+    .project-carousel .carousel-control-prev-icon,
+    .project-carousel .carousel-control-next-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.9)) drop-shadow(0 0 4px rgba(0,0,0,0.7));
+    }
+
+    .project-carousel .carousel-indicators {
+      margin-bottom: 0.35rem;
+    }
+
+    .project-carousel .carousel-indicators li {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.6);
+    }
+
+    .project-carousel .carousel-indicators li.active {
+      background: #fff;
+    }
+
+    .project-card-body {
+      padding: 1.25rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-category {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-category.mobile {
+      background: rgba(16,185,129,0.1);
+      color: #059669;
+    }
+
+    .project-category.web {
+      background: rgba(37,99,235,0.1);
+      color: var(--primary);
+    }
+
+    .project-card-body h5 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-card-body .project-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tech-badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: var(--gray-100);
+      color: var(--text-muted);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .project-actions .btn {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    #contact p {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    #contact .btn {
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #contact .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.4);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark) !important;
+      padding: 2rem 0;
+    }
+
+    footer a {
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    footer a:hover {
+      color: var(--primary-light) !important;
+      transform: translateY(-2px);
+    }
+
+    footer p {
+      font-size: 0.825rem;
+      color: #475569;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Portfolio</a>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Fikar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Profile Section -->
-  <section id="profile" class="container text-center py-2">
-    <h1 class="section-title">I'm Fikar</h1>
-    <h5>a programmer</h5>
-    <br>
-    <img src="images/cat-work.jpeg" alt="Profile Photo" class="rounded-circle profile-photo mb-3" width="300px" />
-    <br>
-    <p>
-      I am a dedicated Mechanical Engineering graduate who has successfully transitioned into the IT field, driven by a
-      profound interest in software engineering. With a strong foundation in JavaScript and Dart, I develop robust and
-      efficient applications, seamlessly integrating my engineering problem-solving mindset into my software development
-      practices. I am committed to continuous learning and staying current with industry trends to enhance my skills and
-      contribute effectively to any team, eager to leverage my diverse skill set and technical expertise to deliver
-      high-quality software solutions that drive success and innovation.
-    </p>
-    <p></p>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="container mt-4 bg-skills py-2">
-    <h1 class="section-title">Skill</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <h3 class="text-center">Frontend</h3>
-        <ul class="list-group">
-          <li class="list-group-item">HTML & CSS</li>
-          <li class="list-group-item">JavaScript</li>
-          <li class="list-group-item">React & React Native</li>
-          <li class="list-group-item">Tailwind</li>
-          <li class="list-group-item">Flutter</li>
-
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h3 class="text-center">Backend</h3>
-        <ul class="list-group">
-          <li class="list-group-item">Node.js</li>
-          <li class="list-group-item">Express</li>
-          <li class="list-group-item">ORM Sequelize</li>
-          <li class="list-group-item">PostgreSql</li>
-          <li class="list-group-item">n8n</li>
-
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h3 class="text-center">Utility</h3>
-        <ul class="list-group">
-          <li class="list-group-item">Github</li>
-          <li class="list-group-item">Source Tree</li>
-          <li class="list-group-item">Test Automation</li>
-          <li class="list-group-item">Scrum Agile Methodology</li>
-          <li class="list-group-item">CI/CD</li>
-        </ul>
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <img src="images/cat-work.jpeg" alt="Profile Photo" class="hero-avatar" />
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Fikar Suwardi</h1>
+      <p class="hero-title">Full Stack Developer</p>
+      <p class="hero-bio">
+        Mechanical Engineering graduate turned software engineer. I build scalable backend services,
+        responsive frontends, and production-grade systems using .NET, Java, Node.js, React/Next.js, and Flutter.
+        Currently based in Malang, Indonesia — working remotely with international teams.
+      </p>
+      <div class="hero-actions d-flex justify-content-center flex-wrap" style="gap: 0.75rem;">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="#projects" class="btn btn-outline-light">View Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- Education Section -->
-  <section id="education" class="container py-4">
-    <h1 class="section-title">Education</h1>
-    <div class="card-deck">
-      <div class="card shadow mb-4">
-        <div class="card-img-container">
-          <img src="images/unhas-logo.png" alt="unhas-logo" class="card-img-top img-fluid w-50" width="auto" />
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">
-            Bachelor's Degree of Mechanical Engineering
-          </h5>
-          <p class="card-text">Hasanuddin University</p>
-          <h6 class="card-text">October 2014 - May 2019</h6>
-        </div>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What I work with</p>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-divider"></div>
       </div>
-      <div class="card shadow mb-4">
-        <div class="card-img-container">
-          <img src="images/hactiv8-logo.png" alt="hacktiv8-logo" class="card-img-top img-fluid w-50" width="auto" />
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="skill-category">
+            <h5><i class="fas fa-code mr-2"></i>Languages</h5>
+            <div class="skill-badges">
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">C#</span>
+              <span class="skill-badge">Java</span>
+              <span class="skill-badge">Dart</span>
+              <span class="skill-badge">HTML & CSS</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">Swift</span>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Full Stack Javascript Developer</h5>
-          <p class="card-text">Hacktiv8</p>
-          <h6 class="card-text">March 2022 - July 2022</h6>
-          <p class="card-text">This 16-week programming and application development bootcamp consists of four phases,
-            covering fundamental
-            programming, application structure, database introduction, React & React Native, and MVP creation, with each
-            phase progressively teaching JavaScript basics, Fullstack JavaScript, client-server architecture, Vue,
-            microservices, and culminating in a final project presentation.
-          </p>
+        <div class="col-md-4 mb-4">
+          <div class="skill-category">
+            <h5><i class="fas fa-layer-group mr-2"></i>Frameworks</h5>
+            <div class="skill-badges">
+              <span class="skill-badge">Node.js / Express</span>
+              <span class="skill-badge">.NET</span>
+              <span class="skill-badge">Spring Boot</span>
+              <span class="skill-badge">React.js / Next.js</span>
+              <span class="skill-badge">Flutter</span>
+              <span class="skill-badge">n8n</span>
+              <span class="skill-badge">WordPress</span>
+              <span class="skill-badge">UIKit</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="skill-category">
+            <h5><i class="fas fa-tools mr-2"></i>Tools</h5>
+            <div class="skill-badges">
+              <span class="skill-badge">Visual Studio</span>
+              <span class="skill-badge">VSCode</span>
+              <span class="skill-badge">Android Studio</span>
+              <span class="skill-badge">IntelliJ</span>
+              <span class="skill-badge">Xcode</span>
+              <span class="skill-badge">Git / GitHub</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">SQL Server</span>
+              <span class="skill-badge">Lark</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="container py-4">
-    <h1 class="section-title mb-4">Experience</h1>
-    <div class="experience-card-deck">
-
-      <div class="experience-card flex-row align-items-center mb-2">
-        <img src="images/linkbot_logo.jpeg" class="experience-card-img-left" alt="dms-logo"
-          style="width: 300px; height: 300px;" />
-        <div class="experience-card-body">
-          <h4 class="card-title">Linkbot Pte Ltd</h5>
-            <p class="card-title">September 2024 - Current</p>
-            <h6 class="card-title">Software Programmer</h6>
-            <p class="text">
-              As a Software Programmer, I contribute to developing innovative applications by combining traditional
-              programming skills with no-code platforms to create scalable solutions. My responsibilities include
-              designing and implementing robust API integrations across platforms n8n, optimizing data flows, and
-              utilizing JSON scripting for seamless automation. I collaborate closely with clients to understand their
-              needs and deliver effective solutions. With a foundation in programming, strong communication skills, and
-              a
-              passion for automation, I thrive in dynamic environments, driving both individual and team success.
-            </p>
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Academic Background</p>
+        <h2 class="section-title">Education</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 mb-4">
+          <div class="edu-card">
+            <img src="images/unhas-logo.png" alt="Universitas Hasanuddin" />
+            <div class="edu-card-body">
+              <h5>Bachelor's Degree of Mechanical Engineering</h5>
+              <p class="institution">Universitas Hasanuddin</p>
+              <p class="location"><i class="fas fa-map-marker-alt mr-1"></i>Makassar, Indonesia</p>
+              <p class="period"><i class="fas fa-calendar-alt mr-1"></i>October 2014 – May 2019</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8 mb-4">
+          <div class="edu-card">
+            <img src="images/hactiv8-logo.png" alt="Hacktiv8" />
+            <div class="edu-card-body">
+              <h5>Fullstack Javascript Immersive</h5>
+              <p class="institution">Hacktiv8</p>
+              <p class="location"><i class="fas fa-map-marker-alt mr-1"></i>Jakarta, Indonesia</p>
+              <p class="period"><i class="fas fa-calendar-alt mr-1"></i>March 2022 – July 2022</p>
+              <p class="description">16-week bootcamp covering fundamental programming, fullstack JavaScript, React & React Native, client-server architecture, Vue, microservices, and a final project presentation.</p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="experience-card flex-row align-items-center mb-2">
-        <img src="images/dms.jpeg" class="experience-card-img-left" alt="dms-logo"
-          style="width: 300px; height: 300px;" />
-        <div class="experience-card-body">
-          <h4 class="card-title">PT. Dynamics Management Solution</h5>
-            <p class="card-title">June 2024 - September 2024</p>
-            <h6 class="card-title">Software Developer</h6>
-            <p class="experience-card-text">
-              As a Software Developer, I develop and maintain an HRIS mobile app, focusing on UI/UX design, efficient
-              Dart
-              code, and integrating features like employee management and payroll. I also work on the "Sivali Talent
-              Match" job search app with attendance and salary features. I ensure app responsiveness, connect to backend
-              services via APIs, fix bugs, and collaborate with the team for planning and communication.
-            </p>
-        </div>
-      </div>
-
-      <div class="experience-card flex-row align-items-center mb-2">
-        <img src="images/wide-logo.jpeg" class="experience-card-img-left" alt="wide-logo"
-          style="width: 300px; height: 300px;" />
-        <div class="experience-card-body">
-          <h4 class="card-title">PT Wide Technologies Indonesia</h5>
-            <p class="card-title">September 2022 - September 2024</p>
-            <h6 class="card-title">Software Mobile Engineer</h6>
-            <p class="experience-card-text">
-              As a Software Engineer, I develop and maintain a Digital Mobile Banking Platform, focusing on implementing
-              user-friendly and secure features, writing efficient code, and integrating with banking systems and APIs.
-              I
-              ensure data synchronization and security, fix bugs, and collaborate with cross-functional teams while
-              effectively communicating with stakeholders to deliver a robust and reliable banking solution.
-            </p>
-        </div>
-      </div>
-
-      <div class="experience-card flex-row align-items-center mb-">
-        <img src="images/wings-logo.png" class="experience-card-img-left" alt="wings-logo"
-          style="width: 300px; height: 300px;" />
-        <div class="experience-card-body">
-          <h4 class="card-title">PT. Karunia Indah Segar (Wings Group)</h5>
-            <p class="card-title">November 2019 - September 2021</p>
-            <h6 class="card-title">Production Supervisor</h6>
-            <p class="experience-card-text">
-              As a Production Supervisor, I oversee production processes, supervise staff, ensure safety protocols, and
-              maintain quality standards. My role includes monitoring efficiency, managing schedules, resolving issues,
-              and coordinating with departments to meet targets and ensure smooth operations, contributing to
-              high-quality
-              beverage production.
-            </p>
-        </div>
-      </div>
-
     </div>
   </section>
 
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Where I've worked</p>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="d-flex flex-column" style="gap: 1.25rem;">
 
+        <div class="exp-card">
+          <img src="https://placehold.co/72x72?text=SwiftX" class="exp-logo" alt="SwiftX" />
+          <div class="exp-body">
+            <h4>SwiftX Solutions Pte Ltd</h4>
+            <span class="exp-role">Full Stack Developer</span>
+            <p class="exp-meta"><i class="fas fa-calendar-alt mr-1"></i>March 2025 – Present &nbsp;·&nbsp; <i class="fas fa-map-marker-alt mr-1"></i>Singapore, Remote</p>
+            <ul>
+              <li>Developed and maintained web applications using .NET, C#, Java, and Spring Boot</li>
+              <li>Built scalable backend services and REST APIs for production systems</li>
+              <li>Developed responsive frontend interfaces integrated with backend services</li>
+              <li>Optimized performance, reliability, and production stability</li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- Projects Mobile Section -->
-  <section id="projects" class="container py-4">
-    <h1 class="section-title">Projects Mobile</h1>
-    <div class="row" id="project-cards-mobile">
-      <!-- Project cards will be injected here by JavaScript -->
+        <div class="exp-card">
+          <img src="https://placehold.co/72x72?text=Corebridge" class="exp-logo" alt="Corebridge" />
+          <div class="exp-body">
+            <h4>Corebridge Solutions Corporation</h4>
+            <span class="exp-role">Frontend Engineer</span>
+            <p class="exp-meta"><i class="fas fa-calendar-alt mr-1"></i>September 2024 – March 2025 &nbsp;·&nbsp; <i class="fas fa-map-marker-alt mr-1"></i>Philippine, Remote</p>
+            <ul>
+              <li>Built and maintained high-performance web applications using Next.js, Astro, Strapi, and WordPress</li>
+              <li>Developed responsive, SEO-optimized user interfaces and page architectures</li>
+              <li>Integrated frontend applications with CMS and backend APIs</li>
+              <li>Optimized performance, accessibility, and UI consistency across devices</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <img src="images/linkbot_logo.jpeg" class="exp-logo" alt="Linkbot" />
+          <div class="exp-body">
+            <h4>Linkbot Pte Ltd</h4>
+            <span class="exp-role">Software Developer</span>
+            <p class="exp-meta"><i class="fas fa-calendar-alt mr-1"></i>September 2024 – March 2025 &nbsp;·&nbsp; <i class="fas fa-map-marker-alt mr-1"></i>Singapore, Remote</p>
+            <ul>
+              <li>Developed scalable web applications using Next.js and WordPress</li>
+              <li>Built automation workflows and API integrations using n8n</li>
+              <li>Created responsive web interfaces using Lark Developer Tools</li>
+              <li>Collaborated with clients to deliver production-ready solutions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <img src="https://placehold.co/72x72?text=Platon" class="exp-logo" alt="Platon" />
+          <div class="exp-body">
+            <h4>Platon</h4>
+            <span class="exp-role">Backend Developer (Freelance)</span>
+            <p class="exp-meta"><i class="fas fa-calendar-alt mr-1"></i>July 2024 – September 2024 &nbsp;·&nbsp; <i class="fas fa-map-marker-alt mr-1"></i>Yogyakarta, Remote</p>
+            <ul>
+              <li>Developed and maintained server-side applications using Express.js and PostgreSQL</li>
+              <li>Built and optimized REST APIs and database queries for production workloads</li>
+              <li>Implemented authentication, authorization, and data validation mechanisms</li>
+              <li>Integrated backend services with frontend applications and third-party APIs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <img src="images/wide-logo.jpeg" class="exp-logo" alt="Wide Technologies" />
+          <div class="exp-body">
+            <h4>PT. Wide Technologies Indonesia</h4>
+            <span class="exp-role">Software Engineer</span>
+            <p class="exp-meta"><i class="fas fa-calendar-alt mr-1"></i>September 2022 – December 2024 &nbsp;·&nbsp; <i class="fas fa-map-marker-alt mr-1"></i>Jakarta, Indonesia</p>
+            <ul>
+              <li>Developed and maintained mobile banking applications used in production environments</li>
+              <li>Implemented secure authentication, transaction UI flows, and client-side validations</li>
+              <li>Integrated mobile applications with backend services and third-party banking APIs</li>
+              <li>Fixed production issues and optimized performance, stability, and security</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <img src="images/wings-logo.png" class="exp-logo" alt="Wings Group" />
+          <div class="exp-body">
+            <h4>PT. Wings Group</h4>
+            <span class="exp-role">Production Supervisor</span>
+            <p class="exp-meta"><i class="fas fa-calendar-alt mr-1"></i>November 2019 – September 2021 &nbsp;·&nbsp; <i class="fas fa-map-marker-alt mr-1"></i>Makassar, Indonesia</p>
+            <ul>
+              <li>Supervised daily beverage production operations and shop-floor staff</li>
+              <li>Enforced safety, GMP, and quality assurance standards on production lines</li>
+              <li>Managed production schedules, workflow, and output targets</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- Projects Web Section -->
-  <section id="projects" class="container py-4">
-    <h1 class="section-title">Projects Web</h1>
-    <div class="row" id="project-cards-web">
-      <!-- Project cards will be injected here by JavaScript -->
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What I've built</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row" id="project-cards"></div>
     </div>
   </section>
-
 
   <!-- Modal -->
-  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <img src="" class="img-fluid" id="modalImage" alt="Selected Image">
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content" style="background: transparent; border: none;">
+        <div class="modal-body p-0 position-relative">
+          <img src="" class="img-fluid rounded" id="modalImage" alt="Preview" style="width:100%;">
+          <button id="modalPrev" style="
+            position:absolute; left:0; top:50%; transform:translateY(-50%);
+            background:rgba(0,0,0,0.5); border:none; color:#fff;
+            width:2.5rem; height:2.5rem; border-radius:0 6px 6px 0;
+            font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
+          "><i class="fas fa-chevron-left"></i></button>
+          <button id="modalNext" style="
+            position:absolute; right:0; top:50%; transform:translateY(-50%);
+            background:rgba(0,0,0,0.5); border:none; color:#fff;
+            width:2.5rem; height:2.5rem; border-radius:6px 0 0 6px;
+            font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center;
+          "><i class="fas fa-chevron-right"></i></button>
+          <div id="modalCounter" style="
+            position:absolute; bottom:0.5rem; left:50%; transform:translateX(-50%);
+            background:rgba(0,0,0,0.5); color:#fff; font-size:0.75rem;
+            padding:0.2rem 0.65rem; border-radius:20px;
+          "></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Write your comments here -->
-  <div class="contact-me container text-center py-3" id="contact">
-    <h2 class="py-2">Get In Touch</h2>
-    <a class="btn btn-primary" href="mailto:fikarsuwardi@gmail.com">CONTACT ME</a>
-  </div>
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Let's Work Together</h2>
+      <p>Have a project in mind or just want to say hi? My inbox is always open.</p>
+      <a class="btn btn-primary" href="mailto:fikarsuwardi@gmail.com">
+        <i class="fas fa-envelope mr-2"></i>Send Me an Email
+      </a>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white py-4">
-    <div class="container mb-3">
-      <div class="row">
-        <div class="col">
-          <a href="https://www.linkedin.com/in/zulfikar-suwardi/" target="_blank" class="text-white mx-2">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-          <a href="https://github.com/fikarsuwardi" target="_blank" class="text-white mx-2">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-        </div>
-      </div>
+  <footer class="bg-dark text-center py-4">
+    <div class="container">
+      <a href="https://www.linkedin.com/in/zulfikar-suwardi/" target="_blank" class="text-white mx-3">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://github.com/fikarsuwardi" target="_blank" class="text-white mx-3">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <p class="mt-3">&copy; 2026 Fikar Suwardi. All rights reserved.</p>
     </div>
-    <p>&copy; 2024 fikarsuwardi. All rights reserved.</p>
-
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
