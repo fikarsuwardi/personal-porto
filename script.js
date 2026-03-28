@@ -15,6 +15,71 @@ const listProjects = [
     techStack: ["Flutter", "Firebase", "Bloc", "Dio"],
   },
   {
+    id: 3,
+    name: "Workflow Catatan Belanja",
+    category: "workflow",
+    images: [
+      "images/project/workflow catatan belanja/workflow.png",
+      "images/project/workflow catatan belanja/demo-workflow.jpg",
+    ],
+    desc: "An automated shopping expense tracker built with n8n. Supports receipt scanning via OpenAI vision, manual input via Telegram bot, and generates expense reports stored in Google Sheets.",
+    repo: "",
+    link: "",
+    techStack: ["n8n", "OpenAI", "Google Sheets", "Telegram Bot"],
+  },
+  {
+    id: 7,
+    name: "Alnico Agency Partner Dashboard",
+    category: "web",
+    images: [
+      "images/project/alnico agency/alnico1.png",
+      "images/project/alnico agency/alnico2.png",
+    ],
+    desc: "Internal web app for managing and monitoring agency partner performance. Features a KPI dashboard with metrics like client renewal rate, satisfaction scores, and active accounts. Also includes client management, renewal tracking, and an admin panel for departments and users.",
+    repo: "",
+    link: "",
+    techStack: ["Next.js", "Lark"],
+  },
+  {
+    id: 6,
+    name: "Carlyle Financial",
+    category: "web",
+    images: [
+      "images/project/carlylefinancial/carly1.png",
+      "images/project/carlylefinancial/carly2.png",
+    ],
+    desc: "A mortgage lending platform specializing in jumbo home loans in California.",
+    repo: "",
+    link: "https://www.carlylefinancial.com/",
+    techStack: ["WordPress", "Strapi", "SEO"],
+  },
+  {
+    id: 5,
+    name: "Choque Carro",
+    category: "web",
+    images: [
+      "images/project/choque carro/cc1.png",
+      "images/project/choque carro/cc2.png",
+    ],
+    desc: "A legal services website connecting car accident victims in California with Spanish speaking lawyers.",
+    repo: "",
+    link: "https://choquecarro.com/",
+    techStack: ["WordPress", "Strapi"],
+  },
+  {
+    id: 4,
+    name: "Corebridge Solutions",
+    category: "web",
+    images: [
+      "images/project/corebridge solutions/corebridge1.png",
+      "images/project/corebridge solutions/corebridge2.png",
+    ],
+    desc: "Company profile website for Corebridge Solutions Corporation, a software solutions company. Built with modern web technologies and deployed to production.",
+    repo: "",
+    link: "https://www.corebridgesolutions.com/",
+    techStack: ["Next.js", "Strapi", "SEO"],
+  },
+  {
     id: 2,
     name: "Movie List",
     category: "web",
@@ -68,7 +133,7 @@ function loadProjects() {
           </a>
         </div>
         <div class="project-card-body">
-          <span class="project-category ${project.category}">${project.category === 'mobile' ? 'Mobile' : 'Web'}</span>
+          <span class="project-category ${project.category}">${project.category === 'mobile' ? 'Mobile' : project.category === 'workflow' ? 'Workflow' : 'Web'}</span>
           <h5>${project.name}</h5>
           <p class="project-desc">${project.desc}</p>
           <div class="project-tech-badges">${techBadges}</div>
